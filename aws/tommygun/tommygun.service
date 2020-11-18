@@ -1,0 +1,15 @@
+[Unit]
+Description=TommyGun HTTP service
+After=syslog.target network.target
+
+[Service]
+User=ec2-user
+Environment=HOME=/home/ec2-user
+Type=simple
+ExecStart=/bin/sh -c "java -jar /home/ec2-user/tommygun/tommygun-eth.jar --spring.config.location=/home/ec2-user/tommygun/config/tommygun.properties >> /var/log/tommygun/tommygun.log 2>&1"
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
