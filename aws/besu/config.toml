@@ -1,0 +1,12 @@
+rpc-http-cors-origins="all"
+discovery-enabled=false
+rpc-http-enabled=true
+auto-log-bloom-caching-enabled=false
+rpc-http-port=8545
+rpc-http-apis="ETH,NET,WEB3,DEBUG,ADMIN,TRACE,PLUGINS,TXPOOL"
+p2p-enabled=false
+miner-enabled=true
+miner-coinbase="0xf17f52151EbEF6C7334FAD080c5704D77216b732"
+logging="info"
+data-path="/home/ec2-user/data"
+genesis-file="/home/ec2-user/config/genesis.json"
