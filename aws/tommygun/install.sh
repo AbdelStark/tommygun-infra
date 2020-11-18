@@ -12,7 +12,7 @@ serviceFile=tommygun.service
 serviceFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/tommygun/tommygun.service
 configFile=tommygun.properties
 configFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/tommygun/tommygun.properties
-wget $besuServiceFileURL $configFileURL > /dev/null 2>&1
+wget $serviceFileURL $configFileURL > /dev/null 2>&1
 cp $serviceFile "/etc/systemd/system/$serviceFile"
 cp $configFile "$configDir/$configFile"
 
