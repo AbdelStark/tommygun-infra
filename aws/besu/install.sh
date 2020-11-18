@@ -12,10 +12,13 @@ workDir="$rootDir/tmp"
 # configure besu
 mkdir -p $workDir
 cd $workDir
-besuServiceFile=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/besu/besu.service
-besuConfigFile=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/besu/config.toml
-besuGenesisFile=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/besu/genesis.json
-wget $besuServiceFile $besuConfigFile $besuGenesisFile > /dev/null 2>&1
+besuServiceFile=besu.service
+besuConfigFile=config.toml
+besuGenesisFile=genesis.json
+besuServiceFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/besu/besu.service
+besuConfigFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/besu/config.toml
+besuGenesisFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/besu/genesis.json
+wget $besuServiceFileURL $besuConfigFileURL $besuGenesisFileURL > /dev/null 2>&1
 cp $besuServiceFile /etc/systemd/system/besu.service
 cp $besuConfigFile /home/ec2-user/config/config.toml
 cp $besuGenesisFile /home/ec2-user/config/genesis.json
