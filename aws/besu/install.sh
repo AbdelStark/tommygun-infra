@@ -3,6 +3,7 @@ entryDir=$(pwd)
 rootDir=${1:-/home/ec2-user}
 workDir="$rootDir/tmp"
 configDir=/home/ec2-user/config
+dataDir=/home/ec2-user/data
 
 # install requirements
 #yum install -y git java
@@ -11,7 +12,7 @@ configDir=/home/ec2-user/config
 #./gradlew install
 
 # configure besu
-mkdir -p $workDir $configDir
+mkdir -p $workDir $configDir $dataDir
 cd $workDir
 besuServiceFile=besu.service
 besuConfigFile=config.toml
@@ -23,6 +24,9 @@ wget $besuServiceFileURL $besuConfigFileURL $besuGenesisFileURL > /dev/null 2>&1
 cp $besuServiceFile /etc/systemd/system/besu.service
 cp $besuConfigFile "$configDir/$besuConfigFile"
 cp $besuGenesisFile "$configDir/$besuGenesisFile"
-mkdir -p /home/ec2-user/data
+
 rm -Rf $workDir
 cd $entryDir
+
+sudo systemctl daemon-reload
+sudo chown -R ec2-user:ec2-user $configDir $dataDir
