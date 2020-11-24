@@ -3,7 +3,7 @@ entryDir=$(pwd)
 rootDir=${1:-/home/ec2-user}
 workDir="$rootDir/tmp"
 configDir=/home/ec2-user/config
-dataDir=/home/ec2-user/data
+dataDir=/data
 
 # install requirements
 #yum install -y git java
