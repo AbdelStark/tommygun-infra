@@ -11,5 +11,5 @@ p2p-enabled=false
 miner-enabled=true
 miner-coinbase="0xf17f52151EbEF6C7334FAD080c5704D77216b732"
 logging="info"
-data-path="/home/ec2-user/data"
+data-path="/data"
 genesis-file="/home/ec2-user/config/genesis.json"
