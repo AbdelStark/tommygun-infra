@@ -1,0 +1,15 @@
+[Unit]
+Description=Teku Beacon Node
+After=syslog.target network.target
+
+[Service]
+User=ec2-user
+Environment=HOME=/home/ec2-user
+Type=simple
+ExecStart=/bin/sh -c "/home/ec2-user/teku-validator.sh >> /var/log/teku/beacon.log 2>&1"
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
