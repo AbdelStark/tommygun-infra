@@ -20,8 +20,8 @@ tekuBeaconServiceFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tomm
 tekuValidatorServiceFileURL=https://raw.githubusercontent.com/abdelhamidbakhta/tommygun-infra/main/aws/teku/teku-validator.service
 
 wget $tekuBeaconServiceFileURL $tekuValidatorServiceFileURL  > /dev/null 2>&1
-cp $tekuBeaconServiceFileURL /etc/systemd/system/teku-beacon.service
-cp $tekuValidatorServiceFileURL /etc/systemd/system/teku-validator.service
+cp teku-beacon.service /etc/systemd/system/teku-beacon.service
+cp teku-validator.service /etc/systemd/system/teku-validator.service
 
 rm -Rf $workDir
 cd $entryDir
