@@ -7,10 +7,10 @@ dataDir=/data
 logDir=/var/log/besu
 
 # install requirements
-#yum install -y git java
-#git clone https://github.com/hyperledger/besu
-#cd besu
-#./gradlew install
+yum install -y git java
+git clone https://github.com/hyperledger/besu
+cd besu
+./gradlew install
 
 # configure besu
 mkdir -p $workDir $configDir $dataDir $logDir
